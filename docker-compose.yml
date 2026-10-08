@@ -1,0 +1,15 @@
+services:
+  nurospobeda:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nurospobeda:latest
+    container_name: nurospobeda
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - bot_data:/data
+
+volumes:
+  bot_data:
